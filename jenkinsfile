@@ -1,5 +1,5 @@
 pipeline {
-     agent alpha 
+     agent any 
           stage {
                    stage ('compile stage'){
                         step {
