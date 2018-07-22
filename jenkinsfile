@@ -1,0 +1,24 @@
+pipeline {
+     agent alpha 
+          stage {
+                   stage ('compile stage'){
+                        step {
+                              withMaven (maven:maven 3.5.2){
+                           sh 'mvn clean compile' 
+                      }
+                   }
+                                
+                }
+                     stage ('package stage'){
+                                step {
+                             withMaven (maven:maven 3.5.2){
+                                        sh 'mvn package'
+                      }
+                   
+                  }
+               }
+
+
+}
+ 
+}
