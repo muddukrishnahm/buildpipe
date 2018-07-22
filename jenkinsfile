@@ -3,7 +3,7 @@ pipeline {
           stage {
                    stage ('compile stage'){
                         step {
-                              withMaven (maven:maven 3.5.2){
+                              withMaven (maven: 'maven_3_5_2'){
                            sh 'mvn clean compile' 
                       }
                    }
@@ -11,7 +11,7 @@ pipeline {
                 }
                      stage ('package stage'){
                                 step {
-                             withMaven (maven:maven 3.5.2){
+                             withMaven (maven: 'maven_3_5_2'){
                                         sh 'mvn package'
                       }
                    
